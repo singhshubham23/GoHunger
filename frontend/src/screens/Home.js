@@ -13,8 +13,8 @@ const Home = () => {
   const loadData = async () => {
     try {
       const [itemsRes, catRes] = await Promise.all([
-        fetch("http://localhost:5000/api/food"),
-        fetch("http://localhost:5000/api/category"),
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/food`),
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/category`),
       ]);
 
       const [itemsData, catData] = await Promise.all([

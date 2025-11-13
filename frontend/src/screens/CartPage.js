@@ -153,7 +153,7 @@ const CartPage = () => {
         size: item.size,
       }));
 
-      const res = await fetch("http://localhost:5000/api/order/createOrder", {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/order/createOrder`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
