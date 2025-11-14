@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";   // <-- use Link
+import { Link } from "react-router-dom";  
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -17,7 +17,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/register`, {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
