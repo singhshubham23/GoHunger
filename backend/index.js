@@ -8,7 +8,7 @@ const app = express();
 // ✅ Enable CORS for both local dev and deployed frontend
 const allowedOrigins = [
   'http://localhost:3000',             // local dev
-  'https://go-hunger-fefx.vercel.app' // your deployed frontend
+  'https://go-hunger.vercel.app' // your deployed frontend
 ];
 
 app.use(
