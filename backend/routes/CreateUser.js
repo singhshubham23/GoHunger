@@ -9,7 +9,7 @@ const bcrypt = require("bcryptjs");
 
 //signup
 router.post(
-  "/create",
+  "/register",
   [
     body("name").isLength({ min: 3 }).withMessage("Name must be at least 3 chars"),
     body("email").isEmail().withMessage("Invalid email"),

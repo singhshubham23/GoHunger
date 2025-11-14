@@ -14,7 +14,6 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (like Postman)
       if (!origin) return callback(null, true);
       if (allowedOrigins.indexOf(origin) === -1) {
         const msg = `The CORS policy for this site does not allow access from the specified Origin: ${origin}`;
@@ -24,14 +23,13 @@ app.use(
     },
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true, // allow cookies if needed
+    credentials: true, 
   })
 );
 
-// Parse JSON bodies
 app.use(express.json());
 
-// Connect to MongoDB
+
 connectDB();
 
 // Test route
